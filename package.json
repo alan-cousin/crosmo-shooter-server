@@ -37,6 +37,7 @@
     "@colyseus/arena": "^0.14.9",
     "@colyseus/command": "^0.1.7",
     "@colyseus/monitor": "^0.14.0",
+    "@colyseus/uwebsockets-transport": "^0.14.29",
     "@truffle/hdwallet-provider": "^2.0.8",
     "bcrypt": "^5.0.1",
     "bluebird": "^3.7.2",

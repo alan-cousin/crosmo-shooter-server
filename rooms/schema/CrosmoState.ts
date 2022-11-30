@@ -238,7 +238,7 @@ export class CrosmoState extends Schema implements ICrosmoState {
     bullet.speed_y = speed_y;
     bullet.owner = id;
     bullet.bulletType = bulletType;
-		
+		console.log("Insert new bullet at :", new Date().getTime())
     this.bullets[this.bullet_index++] = bullet;
 
   }

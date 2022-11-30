@@ -49,7 +49,7 @@ export class CrosmoRoom extends Room<CrosmoState> {
     // }
     // this.setMetadata({ name, description, hasPassword })
     this.setState(new CrosmoState())
-    // this.setPatchRate(30)//standard 50
+    this.setPatchRate(30)//standard 50
 
     // when receiving updatePlayer message, call the UpdatePlayer
     this.onMessage(
@@ -101,7 +101,7 @@ export class CrosmoRoom extends Room<CrosmoState> {
         speed_y: number,
         bulletType:string
       }) => {
-        console.log("bullet created", message.bulletType);
+        console.log("bullet created", message.bulletType, " at : ", new Date().getTime());
         if (this.state.getPlayer(client.sessionId) == undefined) return;
         this.state.spawnRandomBullet(client.sessionId, message);
       })
