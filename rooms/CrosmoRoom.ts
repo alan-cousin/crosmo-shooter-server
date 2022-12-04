@@ -5,6 +5,7 @@ import { Message } from '../types/Messages'
 import { IRoomData } from '../types/Rooms'
 import UpdatePlayer from './commands/UpdatePlayer'
 import { setScore } from './state'
+import CONFIG from '../types/config/config'
 import {
 	randRange,
 	checkRoulette,
@@ -21,7 +22,7 @@ import {
 	BONUS_AIRDROP_DURATION,
 	BONUS_LIFE,
 	DIFFICULTY
-} from "../types/common/helper"
+} from "../types/config/helper"
 // import UpdateBullet from './commands/UpdateBullet'
 
 export class CrosmoRoom extends Room<CrosmoState> {
@@ -138,7 +139,7 @@ export class CrosmoRoom extends Room<CrosmoState> {
         // this.state.spawnRandomAirdrop(300, 400, 80);
       }
     }, 2000);
-    this.clock.setInterval(this.ServerGameLoop.bind(this), 50);
+    this.clock.setInterval(this.ServerGameLoop.bind(this), CONFIG.SYNC_INTERVAL);
   }
   isAtomicExplode(sessionId:string) {
     console.log("Atomic explode", sessionId);

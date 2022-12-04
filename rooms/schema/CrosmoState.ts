@@ -16,7 +16,7 @@ import {
 	BONUS_AIRDROP_DURATION,
 	BONUS_LIFE,
 	DIFFICULTY
-} from "../../types/common/helper"
+} from "../../types/config/helper"
 import { dir } from 'console'
 //@ts-ignore
 export class Player extends Schema implements IPlayer {

@@ -21,7 +21,13 @@ export function sanitizeId(id) {
   return sanitized.replace(/[^0-9a-z]/gi, 'G')
 }
 
-
+export const HeaderToken = () => {
+  return {
+    headers: {
+      token: localStorage.getItem('jwt') ? JSON.parse(localStorage.getItem('jwt')).token : false,
+    },
+  };
+};
 
 export const QUARTRAD = Math.PI / 4
 
@@ -45,6 +51,7 @@ export const ASTEROID_SIZE = {
   LARGE: 'LARGE',
   SMALL: 'SMALL'
 }
+
 export const BULLET_TYPE = {
   NORMAL_BULLET: 'NORMAL_BULLET',
   UNLIMITED_BULLET: 'UNLIMITED_BULLET',
@@ -55,6 +62,7 @@ export const BULLET_TYPE = {
   EXPLOSIVE_BULLET: 'EXPLOSIVE_BULLET',
   ATOMIC_BULLET: 'ATOMIC_BULLET',
 }
+
 export const BULLET_NAME = {
   NORMAL_BULLET: Config.graphicAssets.bulletNormal.name,
   UNLIMITED_BULLET: Config.graphicAssets.bulletUnlimited.name,

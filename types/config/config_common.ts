@@ -1,9 +1,38 @@
 const config = {
-  multiPlayerPros: {
+  SYNC_INTERVAL:30,
+  gamePros: {
     screenWidth: 1600,
     screenHeight: 900,
+    padding: 30,
+    introNewEnemyDelay: 2000,
+    endLevelDelay: 1500,
   },
-  graphicAssets: {   
+  multiPlayerPros: {
+    screenWidth: 1600,
+    screenHeight:900,
+  },
+  graphicAssets: {
+    background: {
+      URL: "assets/images/bg_shooter.png",
+      name: "background"
+    },
+    particles: {
+      URL: 'assets/images/particles.png',
+      data: 'assets/images/particle_orbs.json',
+      name: 'particles'
+    },
+    shipUrl:'assets/images/ships/',
+    shipsTypes:["Black Spaceship type 1",
+    "Black Spaceship type 1",    "Black Spaceship type 2",    "Black Spaceship type 3",
+    "Blue Spaceship type 1",    "Blue Spaceship type 2",    "Blue Spaceship type 3",
+    "Gold Spaceship type 1",    "Gold Spaceship type 2",    "Gold Spaceship type 3",
+    "Green Spaceship type 1",    "Green Spaceship type 2",    "Green Spaceship type 3",
+    "Grey Spaceship type 1",    "Grey Spaceship type 2",    "Grey Spaceship type 3",
+    "Pink Spaceship type 1",    "Pink Spaceship type 2",    "Pink Spaceship type 3",
+    "Red Spaceship type 1",    "Red Spaceship type 2",    "Red Spaceship type 3",
+    "White Spaceship type 1",    "White Spaceship type 2",    "White Spaceship type 3",
+  "Holographic Spaceship"],
+   
     bulletNormal: {
       URL: "assets/images/bullet_normal.png",
       name: "bulletNormal"
@@ -92,6 +121,10 @@ const config = {
       URL: "assets/images/airdrop_shield.png",
       name: 'airdropShield'
     },
+    shield: {
+      URL: "assets/images/shield.png",
+      name: "shield"
+    },
     enemyFirst: {
       URL: "assets/images/enemy_1.png",
       name: "enemyFirst"
@@ -123,12 +156,56 @@ const config = {
     rocketBullet: {
       URL: "assets/images/bullet_boss.png",
       name: "rocketBullet"
-    },   
+    },
+    lifeEmpty: {
+      URL: "assets/images/life_empty.png",
+      name: "lifeEmpty"
+    },
+    lifeFull: {
+      URL: "assets/images/life_full.png",
+      name: "lifeFull"
+    },
     lazerEffectParticle: {
       URL: 'assets/images/lazer_effect.png',
       data: 'assets/images/particle_lazer.json',
       name: "lazerEffectParticle"
     }
+  },
+  soundAssets: {
+    bg: {
+      URL: "assets/sounds/bg.mp3",
+      name: 'bg'
+    },
+    fire: {
+      URL: [
+        "assets/sounds/fire.m4a",
+        "assets/sounds/fire.ogg"
+      ],
+      name: "fire"
+    },
+    destroyed: {
+      URL: [
+        "assets/sounds/destroyed.m4a",
+        "assets/sounds/destroyed.ogg"
+      ],
+      name: "destroyed"
+    },
+    engine: {
+      URL: 'assets/sounds/engine.mp3',
+      name: 'engine'
+    },
+    shipExplose: {
+      URL: 'assets/sounds/ship_explode.wav',
+      name: 'shipExplose'
+    }
+  },
+  shipPros: {
+    acceleration: 200,
+    drag: 100,
+    maxVelocity: 300,
+    angularVelocity: 180,
+    startingLives: 5,
+    blinkDelay: 0.2
   },
   bulletPros: {
     NORMAL_BULLET: {
@@ -223,6 +300,46 @@ const config = {
     lifetime: 10,
     alertTime: 7
   },
+  fontAssets: {
+    endLevel: {
+      fontFamily: 'Fast Hand',
+      fontSize: '30px',
+      color: '#ffffff'
+    },
+    waitingFontStyle: {
+      fontFamily: 'Fast Hand',
+      fontSize: '45px',
+      color: '#ff601a',
+      align:'center'
+    },
+    scoreLabel: {
+      fontFamily: 'Fast Hand',
+      fontSize: '30px',
+      color: '#24c2bc',
+    },
+    scoreText: {
+      fontFamily: 'Fast Hand',
+      fontSize: '30px',
+      color: '#ffffff'
+    },
+    levelLabel: {
+      fontFamily: 'Fast Hand',
+      fontSize: '20px',
+      color: '#ff601a'
+    },
+    levelText: {
+      fontFamily: 'Fast Hand',
+      fontSize: '20px',
+      color: '#ffffff'
+    },
+    gameoverFontStyle: {
+      fontFamily: "Fast Hand",
+      fill: "#ff601a",
+      fontSize: '50px',
+      align: 'center',
+    }
+  }
 }
+
 
 export default config
